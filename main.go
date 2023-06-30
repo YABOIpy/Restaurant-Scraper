@@ -29,7 +29,7 @@ func GetSpareRibExpress(c scraper.Scrape) {
 	Webdata := s.GetHTMLSpareRibExpress(c, c.SiteUrl)
 	data := parsers.SpareRibExpress(Webdata)
 	for _, d := range data {
-		fmt.Printf("Titel: %s\n Subtitel: %s | Prijs: %s \n\n", d.Title, d.Subtitle, d.Price)
+		fmt.Printf("Titel: %s\n Subtitel: %s | Prijs: %s\n\n______________________________\n", d.Title, d.Subtitle, d.Price)
 		//kan dit schrijven naar een csv file of database
 	}
 
