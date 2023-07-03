@@ -19,15 +19,10 @@ func SpareRibExpress(content string) (menus []Express) {
 	}
 
 	doc.Find(".menu-dish--large").Each(func(i int, s *goquery.Selection) {
-
-		titel := s.Find("h3.menu-dish--large__title").Text()
-		subt := s.Find("p.menu-dish--large__sub").Text()
-		prijs := s.Find("p.menu-dish--large__price").Text()
-
 		data := Express{
-			Title:    titel,
-			Subtitle: subt,
-			Price:    prijs,
+			Title:    s.Find("h3.menu-dish--large__title").Text(),
+			Subtitle: s.Find("p.menu-dish--large__sub").Text(),
+			Price:    s.Find("p.menu-dish--large__price").Text(),
 		}
 		menus = append(menus, data)
 	})
